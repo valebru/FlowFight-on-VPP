@@ -1,5 +1,21 @@
 # FlowFight-on-VPP
 
+
+## Table of contents
+
+   * [Requirement](#requirement)
+      * [VPP configuration](#vpp-configuration)
+      * [Moongen](#moongen)
+      * [Synthetic Stream Generator (SSG)](#synthetic-stream-generator-ssg)
+      * [Plotting](#plotting)
+   * [Demo Setup](#demo-setup)
+      * [Create synthetic trace](#create-synthetic-trace)
+      * [VPP test using loopback](#vpp-test-using-loopback)
+         * [VPP startup](#vpp-startup)
+         * [Results processing](#results-processing)
+      * [VPP test using real interface through DPDK and MoonGen](#vpp-test-using-real-interface-through-dpdk-and-moongen)
+
+
 # Requirement
 
 ## VPP configuration
