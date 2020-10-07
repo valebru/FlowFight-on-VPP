@@ -1,5 +1,5 @@
 # FlowFight-on-VPP
-
+A recurring task in security monitoring / anomaly detection applications consists in finding scan-type flows, namely flows which exhibit a large cardinality in terms of number of distinct source/destination addresses, or in most generality packet-level identifiers (e.g. ports, header fields, etc). Since cardinality estimation requires to "remember" the identifiers seen in the past, this task is quite challenging when the goal is to implement per-flow distinct count at wire speed, while maintaining high processing throughput and  limited memory footprint. To address this challenge, we propose and assess an innovative design, called FlowFight. Our approach leverages HyperLogLog approximate sketches for single-flow cardinality estimation, but rather than keeping one sketch per flow, we embed them into a memory efficient data structure based on a modified version of a stream summary managed via an original randomized access policy. Using either synthetic as well as real traffic traces, we show that FlowFight is able to estimate the top-$k$ cardinality flows with an accuracy of more than 95\%, while retaining a processing throughput of around 8 Mpps on single core.
 
 ## Table of contents
 
