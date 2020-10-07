@@ -72,7 +72,7 @@ Enter the `tools_vpp` directory.
 1. Before run vpp, please check the startup.conf file in which the vpp configuration is contained. In this directory you can find a simple startup.conf that should works with our base test.
 Anyway, in the startup.conf is stored information used by VPP to configure the framework, take a look to [their documentation: detailed list of options for startup-conf file](https://wiki.fd.io/view/VPP/Command-line_Arguments)
 
-2. To launch and configure the FlowFight plugin you can run (or take a look to the command in the bash script): `sh run_vpp_ff.sh $ff_size $hll_bits_size`
+2. To launch and configure the FlowFight plugin you can run (or take a look to the command in the bash script): `sh run_vpp_ff.sh <ff_size> <hll_bits_size>`
 If you want enter the vpp command line: `sudo -E $BINS/vppctl -s /run/vpp/cli.sock`
 
 3. Finally, to generate traffic from the VPP packet generator (the synthetic stream or the real pcap): 
@@ -87,9 +87,13 @@ sudo -E $BINS/vppctl -s /run/vpp/cli.sock exec $FF_DIR/tools_vpp/vpp_script_pcap
 
 
 ### Results processing
+In the `tools_res` directory, we prepare the reference files to the two stream we generated in vpp. This files contain the exact counting of the flows cardinality. And we will use this information to compare the FlowFight estimation with the exact estimation and evaluate the precision of the top-k and the relative error of the single HLL assigned to the flow.
 
-
-
+We also prepared two scripts in `tools_vpp` directory, that perform the complete test:
+```bash
+sh start_basetest.sh
+sh start_basetest_pcap.sh
+```
 
 ## VPP test using real interface through DPDK and MoonGen
 TODO
