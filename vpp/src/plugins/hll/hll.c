@@ -368,8 +368,7 @@ hll_count_command_fn (vlib_main_t * vm,
 		       hlls->deniedaccess,
 		       (hlls->deniedaccess / (hlls->pkt_count + 1.0)));
       vlib_cli_output (vm, "raw_count swaps: %d ", hlls->n_swaps);
-      vlib_cli_output (vm, "hll_assigned: %d (%d)", hlls->hll_assigned,
-		       hlls->multihll_size);
+      //vlib_cli_output (vm, "hll_assigned: %d (%d)", hlls->hll_assigned, hlls->multihll_size);
 
 
       vlib_cli_output (vm, "--------------------------------------");
@@ -384,8 +383,7 @@ hll_count_command_fn (vlib_main_t * vm,
 	.rel_out = 1,
       };
 
-      BV (clib_bihash_foreach_key_value_pair) (hlls->hll_list_hash,
-					       count_hll_ht, &ctx);
+      //BV (clib_bihash_foreach_key_value_pair) (hlls->hll_list_hash, count_hll_ht, &ctx);
       vlib_cli_output (vm, "==========Top-K zone=============");
 
       ctx.rel_out = 0;
