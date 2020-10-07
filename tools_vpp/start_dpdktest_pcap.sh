@@ -7,8 +7,8 @@ tracefile=$FF_DIR/tools_res/capture.pcap
 echo "\n\n=======================================================================\n"
 echo "----------MoonGen packet generator"
 echo "\n\n=======================================================================\n"
-sudo ${MoonGen_dir}/MoonGen/build/MoonGen ${MGSCR}/replay-pcap-hll.lua --dpdk-config=${dpdkfile} 0 1 ${tracefile} ${tracefile} ${tracefile} -l
-sleep 5
+sudo ${MoonGen_dir}/build/MoonGen ${MGSCR}/replay-pcap-hll.lua --dpdk-config=${dpdkfile} 0 1 ${tracefile} ${tracefile} ${tracefile} -l
+sleep 10
 
 echo "\n\n=======================================================================\n"
 filename="${EXP_RES}/Basetest_res_${dt}.txt"

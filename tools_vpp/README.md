@@ -1,4 +1,4 @@
-## VPP test using loopback
+# VPP test using loopback
 This kind of test will create an internal loopback inside VPP and can be executed without requiring particular server features.
 It can be used to play and test the accuracy of the algorithm.
 
@@ -31,7 +31,9 @@ sh start_basetest.sh
 sh start_basetest_pcap.sh
 ```
 
-## VPP test using real interface through DPDK and MoonGen
+---
+
+# VPP test using real interface through DPDK and MoonGen
 This test will use the physical interfaces to run experiment at line speed to evaluate performance of the VPP plugin. (In particular, we will evaluate the packets per second sustained by the framework).
 This test requires that your physical interfaces can be binded by DPDK. And to run the test you have to first know the pci addresses of your interfaces and bind them with dpdk. [DPDK documentation for interface binding](https://doc.dpdk.org/guides/tools/devbind.html)
 
