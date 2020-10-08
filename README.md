@@ -98,6 +98,18 @@ sh start_basetest_pcap.sh
 This test will use the physical interfaces to run experiment at line speed to evaluate performance of the VPP plugin. (In particular, we will evaluate the packets per second sustained by the framework).
 This test requires that your physical interfaces can be binded by DPDK. And to run the test you have to first know the pci addresses of your interfaces and bind them with dpdk. [DPDK documentation for interface binding](https://doc.dpdk.org/guides/tools/devbind.html)
 
+                +---------------+
+                |               |
+        +-------+-------+       |
+        |       |       |       |
+        |       |       |       |
+        1       0       2       3
+     d8:00.1         5e:00.0
+       |     d8:00.0   |    5e:00.1
+        \   /		\   /
+         \ /		 \ /
+         VPP		MoonGen
+
 
 ### VPP startup
 Enter the `tools_vpp` directory.
